@@ -1,0 +1,2 @@
+vhdl work "FourDigits.vhd"
+vhdl work "FourDigitsTest.vhd"

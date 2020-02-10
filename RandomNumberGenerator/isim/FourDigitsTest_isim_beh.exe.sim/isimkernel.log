@@ -1,0 +1,29 @@
+Command line:
+   FourDigitsTest_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50138
+
+Thu May 16 21:46:47 2019
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 5173.64 Meg
+
+ Total Signals          : 22
+ Total Nets             : 52
+ Total Signal Drivers   : 14
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 3
+ Total Traceable Variables  : 20
+ Total Scalar Nets and Variables : 554
+Total Line Count : 56
+
+ Total Simulation Time: 0.109375 sec
+
+ Current Memory Usage: 5173.64 Meg
+
+Thu May 16 21:47:16 2019
+

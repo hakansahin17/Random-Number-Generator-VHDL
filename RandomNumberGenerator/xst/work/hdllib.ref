@@ -1,0 +1,12 @@
+AR sevensegmentdecoder behavioral C:/Users/Utkan/LabProject/SevenSegmentDecoder.vhd sub00/vhpl11 1558034867
+EN lcg NULL C:/Users/Utkan/LabProject/LCG.vhd sub00/vhpl00 1558034860
+AR main behavioral C:/Users/Utkan/LabProject/Main.vhd sub00/vhpl07 1558034871
+EN lfg NULL C:/Users/Utkan/LabProject/LFG.vhd sub00/vhpl04 1558034868
+AR seedgen behavioral C:/Users/Utkan/LabProject/SeedGen.vhd sub00/vhpl03 1558034863
+EN sevensegmentdecoder NULL C:/Users/Utkan/LabProject/SevenSegmentDecoder.vhd sub00/vhpl10 1558034866
+EN main NULL C:/Users/Utkan/LabProject/Main.vhd sub00/vhpl06 1558034870
+AR lfg behavioral C:/Users/Utkan/LabProject/LFG.vhd sub00/vhpl05 1558034869
+AR lcg behavioral C:/Users/Utkan/LabProject/LCG.vhd sub00/vhpl01 1558034861
+AR fourdigits behavioral C:/Users/Utkan/LabProject/FourDigits.vhd sub00/vhpl09 1558034865
+EN fourdigits NULL C:/Users/Utkan/LabProject/FourDigits.vhd sub00/vhpl08 1558034864
+EN seedgen NULL C:/Users/Utkan/LabProject/SeedGen.vhd sub00/vhpl02 1558034862

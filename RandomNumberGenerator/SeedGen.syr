@@ -1,0 +1,466 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: SeedGen.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SeedGen.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SeedGen"
+Output Format                      : NGC
+Target Device                      : xc3s50a-5-vq100
+
+---- Source Options
+Top Module Name                    : SeedGen
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Utkan/LabProject/LCG.vhd" in Library work.
+Architecture behavioral of Entity lcg is up to date.
+Compiling vhdl file "C:/Users/Utkan/LabProject/SeedGen.vhd" in Library work.
+Entity <seedgen> compiled.
+Entity <SeedGen> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <SeedGen> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <LCG> in library <work> (architecture <Behavioral>) with generics.
+	a = 29
+	b = 7
+	m = 65535
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <SeedGen> in library <work> (Architecture <Behavioral>).
+Entity <SeedGen> analyzed. Unit <SeedGen> generated.
+
+Analyzing generic Entity <LCG> in library <work> (Architecture <Behavioral>).
+	a = 29
+	b = 7
+	m = 65535
+Entity <LCG> analyzed. Unit <LCG> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <LCG>.
+    Related source file is "C:/Users/Utkan/LabProject/LCG.vhd".
+    Found finite state machine <FSM_0> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 3                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <RUNNING>.
+    Found 16-bit register for signal <CURR>.
+    Found 16-bit register for signal <curr_int>.
+    Found 16-bit adder for signal <curr_int$addsub0000>.
+    Found 16x5-bit multiplier for signal <curr_int$mult0000> created at line 68.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+Unit <LCG> synthesized.
+
+
+Synthesizing Unit <SeedGen>.
+    Related source file is "C:/Users/Utkan/LabProject/SeedGen.vhd".
+WARNING:Xst:646 - Signal <lcg_running> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_1> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 12                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 10                                             |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit register for signal <S0>.
+    Found 16-bit register for signal <S1>.
+    Found 16-bit register for signal <S2>.
+    Found 16-bit register for signal <S3>.
+    Found 16-bit register for signal <S4>.
+    Found 16-bit register for signal <S5>.
+    Found 16-bit register for signal <S6>.
+    Found 1-bit register for signal <DONE>.
+    Found 1-bit register for signal <lcg_run>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 114 D-type flip-flop(s).
+Unit <SeedGen> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 16x5-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Registers                                            : 12
+ 1-bit register                                        : 3
+ 16-bit register                                       : 9
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <State/FSM> on signal <State[1:10]> with one-hot encoding.
+---------------------
+ State | Encoding
+---------------------
+ 0000  | 0000000001
+ 0001  | 0000000100
+ 0010  | 0000001000
+ 0011  | 0000010000
+ 0100  | 0000100000
+ 0101  | 0001000000
+ 0110  | 0010000000
+ 0111  | 0100000000
+ 1001  | 1000000000
+ 1011  | 0000000010
+---------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <LCG/State/FSM> on signal <State[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 10
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Multipliers                                          : 1
+ 16x5-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Registers                                            : 147
+ Flip-Flops                                            : 147
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <SeedGen> ...
+
+Optimizing unit <LCG> ...
+WARNING:Xst:2677 - Node <LCG/RUNNING> of sequential type is unconnected in block <SeedGen>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SeedGen, actual ratio is 13.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 158
+ Flip-Flops                                            : 158
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : SeedGen.ngr
+Top Level Output File Name         : SeedGen
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 115
+
+Cell Usage :
+# BELS                             : 183
+#      GND                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 18
+#      LUT4                        : 128
+#      MUXCY                       : 15
+#      VCC                         : 1
+#      XORCY                       : 16
+# FlipFlops/Latches                : 158
+#      FD                          : 137
+#      FDE                         : 16
+#      FDR                         : 1
+#      FDRS                        : 1
+#      FDS                         : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 114
+#      IBUF                        : 1
+#      OBUF                        : 113
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50avq100-5 
+
+ Number of Slices:                       90  out of    704    12%  
+ Number of Slice Flip Flops:            158  out of   1408    11%  
+ Number of 4 input LUTs:                150  out of   1408    10%  
+ Number of IOs:                         115
+ Number of bonded IOBs:                 115  out of     68   169% (*) 
+ Number of MULT18X18SIOs:                 1  out of      3    33%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+WARNING:Xst:1336 -  (*) More than 100% of Device resources are used
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 158   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 7.633ns (Maximum Frequency: 131.004MHz)
+   Minimum input arrival time before clock: 2.141ns
+   Maximum output required time after clock: 5.271ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 7.633ns (frequency: 131.004MHz)
+  Total number of paths / destination ports: 1845 / 179
+-------------------------------------------------------------------------
+Delay:               7.633ns (Levels of Logic = 8)
+  Source:            LCG/curr_int_6 (FF)
+  Destination:       LCG/curr_int_15 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: LCG/curr_int_6 to LCG/curr_int_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.495   0.451  LCG/curr_int_6 (LCG/curr_int_6)
+     MULT18X18SIO:A6->P10    1   4.112   0.380  LCG/Mmult_curr_int_mult0000 (LCG/curr_int_mult0000<10>)
+     LUT3:I2->O            1   0.561   0.000  LCG/curr_int_mux0002<10>1 (LCG/curr_int_mux0002<10>)
+     MUXCY:S->O            1   0.523   0.000  LCG/Madd_curr_int_addsub0000_cy<10> (LCG/Madd_curr_int_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.065   0.000  LCG/Madd_curr_int_addsub0000_cy<11> (LCG/Madd_curr_int_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.065   0.000  LCG/Madd_curr_int_addsub0000_cy<12> (LCG/Madd_curr_int_addsub0000_cy<12>)
+     MUXCY:CI->O           1   0.065   0.000  LCG/Madd_curr_int_addsub0000_cy<13> (LCG/Madd_curr_int_addsub0000_cy<13>)
+     MUXCY:CI->O           0   0.065   0.000  LCG/Madd_curr_int_addsub0000_cy<14> (LCG/Madd_curr_int_addsub0000_cy<14>)
+     XORCY:CI->O           1   0.654   0.000  LCG/Madd_curr_int_addsub0000_xor<15> (LCG/curr_int_addsub0000<15>)
+     FDE:D                     0.197          LCG/curr_int_15
+    ----------------------------------------
+    Total                      7.633ns (6.802ns logic, 0.831ns route)
+                                       (89.1% logic, 10.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.141ns (Levels of Logic = 2)
+  Source:            RUN (PAD)
+  Destination:       State_FSM_FFd9 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: RUN to State_FSM_FFd9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.824   0.559  RUN_IBUF (RUN_IBUF)
+     LUT2:I0->O            1   0.561   0.000  State_FSM_FFd9-In1 (State_FSM_FFd9-In)
+     FD:D                      0.197          State_FSM_FFd9
+    ----------------------------------------
+    Total                      2.141ns (1.582ns logic, 0.559ns route)
+                                       (73.9% logic, 26.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 113 / 113
+-------------------------------------------------------------------------
+Offset:              5.271ns (Levels of Logic = 1)
+  Source:            DONE (FF)
+  Destination:       DONE (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: DONE to DONE
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              2   0.495   0.380  DONE (DONE_OBUF)
+     OBUF:I->O                 4.396          DONE_OBUF (DONE)
+    ----------------------------------------
+    Total                      5.271ns (4.891ns logic, 0.380ns route)
+                                       (92.8% logic, 7.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.50 secs
+ 
+--> 
+
+Total memory usage is 4551724 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

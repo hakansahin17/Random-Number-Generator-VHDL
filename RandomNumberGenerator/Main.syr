@@ -1,0 +1,750 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: Main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Main.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Main"
+Output Format                      : NGC
+Target Device                      : xc3s50a-5-vq100
+
+---- Source Options
+Top Module Name                    : Main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Utkan/LabProject/LCG.vhd" in Library work.
+Architecture behavioral of Entity lcg is up to date.
+Compiling vhdl file "C:/Users/Utkan/LabProject/SeedGen.vhd" in Library work.
+Architecture behavioral of Entity seedgen is up to date.
+Compiling vhdl file "C:/Users/Utkan/LabProject/FourDigits.vhd" in Library work.
+Architecture behavioral of Entity fourdigits is up to date.
+Compiling vhdl file "C:/Users/Utkan/LabProject/SevenSegmentDecoder.vhd" in Library work.
+Architecture behavioral of Entity sevensegmentdecoder is up to date.
+Compiling vhdl file "C:/Users/Utkan/LabProject/LFG.vhd" in Library work.
+Architecture behavioral of Entity lfg is up to date.
+Compiling vhdl file "C:/Users/Utkan/LabProject/Main.vhd" in Library work.
+Entity <main> compiled.
+Entity <main> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Main> in library <work> (architecture <behavioral>) with generics.
+	MAX = 65536
+
+Analyzing hierarchy for entity <FourDigits> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <SevenSegmentDecoder> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <LFG> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <SeedGen> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <LCG> in library <work> (architecture <Behavioral>) with generics.
+	a = 29
+	b = 7
+	m = 65535
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <Main> in library <work> (Architecture <behavioral>).
+	MAX = 65536
+Entity <Main> analyzed. Unit <Main> generated.
+
+Analyzing Entity <FourDigits> in library <work> (Architecture <Behavioral>).
+Entity <FourDigits> analyzed. Unit <FourDigits> generated.
+
+Analyzing Entity <SevenSegmentDecoder> in library <work> (Architecture <Behavioral>).
+Entity <SevenSegmentDecoder> analyzed. Unit <SevenSegmentDecoder> generated.
+
+Analyzing Entity <LFG> in library <work> (Architecture <Behavioral>).
+INFO:Xst:1561 - "C:/Users/Utkan/LabProject/LFG.vhd" line 133: Mux is complete : default of case is discarded
+Entity <LFG> analyzed. Unit <LFG> generated.
+
+Analyzing Entity <SeedGen> in library <work> (Architecture <Behavioral>).
+Entity <SeedGen> analyzed. Unit <SeedGen> generated.
+
+Analyzing generic Entity <LCG> in library <work> (Architecture <Behavioral>).
+	a = 29
+	b = 7
+	m = 65535
+Entity <LCG> analyzed. Unit <LCG> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FourDigits>.
+    Related source file is "C:/Users/Utkan/LabProject/FourDigits.vhd".
+    Found finite state machine <FSM_0> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 6                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit register for signal <D1>.
+    Found 4-bit register for signal <D2>.
+    Found 4-bit register for signal <D3>.
+    Found 4-bit register for signal <D4>.
+    Found 1-bit register for signal <DONE>.
+    Found 13-bit register for signal <current>.
+    Found 13-bit subtractor for signal <current$share0000> created at line 64.
+    Found 4-bit register for signal <digit1>.
+    Found 4-bit adder for signal <digit1$addsub0000> created at line 75.
+    Found 13-bit comparator greater for signal <digit1$cmp_gt0000> created at line 74.
+    Found 4-bit register for signal <digit2>.
+    Found 4-bit adder for signal <digit2$addsub0000> created at line 85.
+    Found 13-bit comparator greater for signal <digit2$cmp_gt0000> created at line 84.
+    Found 4-bit register for signal <digit3>.
+    Found 4-bit adder for signal <digit3$addsub0000> created at line 95.
+    Found 13-bit comparator greater for signal <digit3$cmp_gt0000> created at line 94.
+    Found 4-bit register for signal <digit4>.
+    Found 4-bit adder for signal <digit4$addsub0000> created at line 105.
+    Found 13-bit comparator greater for signal <digit4$cmp_gt0000> created at line 104.
+    Found 13-bit comparator less for signal <State$cmp_lt0000> created at line 78.
+    Found 13-bit comparator less for signal <State$cmp_lt0001> created at line 88.
+    Found 13-bit comparator less for signal <State$cmp_lt0002> created at line 98.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  46 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+Unit <FourDigits> synthesized.
+
+
+Synthesizing Unit <SevenSegmentDecoder>.
+    Related source file is "C:/Users/Utkan/LabProject/SevenSegmentDecoder.vhd".
+Unit <SevenSegmentDecoder> synthesized.
+
+
+Synthesizing Unit <LCG>.
+    Related source file is "C:/Users/Utkan/LabProject/LCG.vhd".
+    Found finite state machine <FSM_1> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 3                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <DONE>.
+    Found 1-bit register for signal <RUNNING>.
+    Found 16-bit register for signal <CURR>.
+    Found 16-bit register for signal <curr_int>.
+    Found 16-bit adder for signal <curr_int$addsub0000>.
+    Found 16x5-bit multiplier for signal <curr_int$mult0000> created at line 71.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Multiplier(s).
+Unit <LCG> synthesized.
+
+
+Synthesizing Unit <SeedGen>.
+    Related source file is "C:/Users/Utkan/LabProject/SeedGen.vhd".
+WARNING:Xst:646 - Signal <lcg_running> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_2> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 20                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 10                                             |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 0000                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit register for signal <S0>.
+    Found 16-bit register for signal <S1>.
+    Found 16-bit register for signal <S2>.
+    Found 16-bit register for signal <S3>.
+    Found 16-bit register for signal <S4>.
+    Found 16-bit register for signal <S5>.
+    Found 16-bit register for signal <S6>.
+    Found 1-bit register for signal <DONE>.
+    Found 1-bit register for signal <lcg_run>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 114 D-type flip-flop(s).
+Unit <SeedGen> synthesized.
+
+
+Synthesizing Unit <LFG>.
+    Related source file is "C:/Users/Utkan/LabProject/LFG.vhd".
+    Found finite state machine <FSM_3> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <DONE>.
+    Found 16-bit register for signal <CURR>.
+    Found 16-bit adder for signal <CURR$add0000> created at line 126.
+    Found 17-bit register for signal <r0>.
+    Found 17-bit register for signal <r1>.
+    Found 17-bit register for signal <r2>.
+    Found 17-bit register for signal <r3>.
+    Found 17-bit register for signal <r4>.
+    Found 17-bit register for signal <r5>.
+    Found 17-bit register for signal <r6>.
+    Found 17-bit adder for signal <r6$addsub0000> created at line 118.
+    Found 1-bit register for signal <seedgen_run>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred 137 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <LFG> synthesized.
+
+
+Synthesizing Unit <Main>.
+    Related source file is "C:/Users/Utkan/LabProject/Main.vhd".
+WARNING:Xst:646 - Signal <bcd_decoder_done> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_4> for signal <State>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK                       (rising_edge)        |
+    | Power Up State     | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit register for signal <ANODES>.
+    Found 7-bit register for signal <SEVENSEGMENT>.
+    Found 17-bit adder for signal <$add0000> created at line 170.
+    Found 1-bit register for signal <bcd_decoder_run>.
+    Found 17-bit up counter for signal <counter>.
+    Found 13-bit register for signal <curr_rand_int>.
+    Found 1-bit register for signal <lfg_run>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  30 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <Main> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 16x5-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 9
+ 13-bit subtractor                                     : 1
+ 16-bit adder                                          : 2
+ 17-bit adder                                          : 2
+ 4-bit adder                                           : 4
+# Counters                                             : 1
+ 17-bit up counter                                     : 1
+# Registers                                            : 38
+ 1-bit register                                        : 9
+ 13-bit register                                       : 2
+ 16-bit register                                       : 10
+ 17-bit register                                       : 7
+ 4-bit register                                        : 8
+ 7-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 7
+ 13-bit comparator greater                             : 4
+ 13-bit comparator less                                : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_4> for best encoding.
+Optimizing FSM <State/FSM> on signal <State[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 100   | 100
+ 101   | 101
+-------------------
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <LFG/State/FSM> on signal <State[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <LFG/SDGN/State/FSM> on signal <State[1:10]> with one-hot encoding.
+---------------------
+ State | Encoding
+---------------------
+ 0000  | 0000000001
+ 0001  | 0000000100
+ 0010  | 0000001000
+ 0011  | 0000010000
+ 0100  | 0000100000
+ 0101  | 0001000000
+ 0110  | 0010000000
+ 0111  | 0100000000
+ 1001  | 1000000000
+ 1011  | 0000000010
+---------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <LFG/SDGN/LCG/State/FSM> on signal <State[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 10
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <FDG/State/FSM> on signal <State[1:6]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000001
+ 001   | 000010
+ 010   | 000100
+ 100   | 001000
+ 101   | 010000
+ 110   | 100000
+-------------------
+WARNING:Xst:2677 - Node <CURR_2> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <CURR_1> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <CURR_0> of sequential type is unconnected in block <LFG>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 5
+# Multipliers                                          : 1
+ 16x5-bit multiplier                                   : 1
+# Adders/Subtractors                                   : 9
+ 13-bit subtractor                                     : 1
+ 16-bit adder                                          : 3
+ 17-bit adder                                          : 1
+ 4-bit adder                                           : 4
+# Counters                                             : 1
+ 17-bit up counter                                     : 1
+# Registers                                            : 361
+ Flip-Flops                                            : 361
+# Comparators                                          : 7
+ 13-bit comparator greater                             : 4
+ 13-bit comparator less                                : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <r0_16> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <r1_16> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <r4_16> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <r2_16> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <r3_16> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <r5_16> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <r6_16> of sequential type is unconnected in block <LFG>.
+WARNING:Xst:2677 - Node <counter_16> of sequential type is unconnected in block <Main>.
+
+Optimizing unit <Main> ...
+WARNING:Xst:1710 - FF/Latch <ANODES_3> (without init value) has a constant value of 1 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ANODES_2> (without init value) has a constant value of 1 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ANODES_1> (without init value) has a constant value of 1 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ANODES_0> (without init value) has a constant value of 1 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <FourDigits> ...
+
+Optimizing unit <LCG> ...
+
+Optimizing unit <SeedGen> ...
+
+Optimizing unit <LFG> ...
+WARNING:Xst:2677 - Node <FDG/DONE> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S0_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S0_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S0_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S3_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S3_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S3_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S1_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S1_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S1_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S2_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S2_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S2_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S6_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S6_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S6_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S4_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S4_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S4_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S5_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S5_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/S5_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/LCG/CURR_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/LCG/CURR_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/LCG/CURR_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/SDGN/LCG/RUNNING> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/CURR_0> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/CURR_1> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/CURR_2> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r6_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r6_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r6_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r5_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r5_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r5_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r3_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r3_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r3_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r2_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r2_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r2_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r4_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r4_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r4_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r1_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r1_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r1_13> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r0_15> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r0_14> of sequential type is unconnected in block <Main>.
+WARNING:Xst:2677 - Node <LFG/r0_13> of sequential type is unconnected in block <Main>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 53.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 339
+ Flip-Flops                                            : 339
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Main.ngr
+Top Level Output File Name         : Main
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 17
+
+Cell Usage :
+# BELS                             : 857
+#      GND                         : 1
+#      INV                         : 10
+#      LUT1                        : 34
+#      LUT2                        : 69
+#      LUT2_L                      : 2
+#      LUT3                        : 52
+#      LUT3_D                      : 2
+#      LUT3_L                      : 2
+#      LUT4                        : 389
+#      LUT4_D                      : 4
+#      LUT4_L                      : 4
+#      MUXCY                       : 105
+#      MUXF5                       : 95
+#      VCC                         : 1
+#      XORCY                       : 87
+# FlipFlops/Latches                : 339
+#      FD                          : 165
+#      FDE                         : 56
+#      FDR                         : 1
+#      FDRS                        : 1
+#      FDS                         : 113
+#      FDSE                        : 3
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 1
+#      OBUF                        : 15
+# MULTs                            : 1
+#      MULT18X18SIO                : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50avq100-5 
+
+ Number of Slices:                      352  out of    704    50%  
+ Number of Slice Flip Flops:            339  out of   1408    24%  
+ Number of 4 input LUTs:                568  out of   1408    40%  
+ Number of IOs:                          17
+ Number of bonded IOBs:                  17  out of     68    25%  
+ Number of MULT18X18SIOs:                 1  out of      3    33%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 339   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 9.016ns (Maximum Frequency: 110.919MHz)
+   Minimum input arrival time before clock: 2.100ns
+   Maximum output required time after clock: 5.271ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 9.016ns (frequency: 110.919MHz)
+  Total number of paths / destination ports: 9521 / 515
+-------------------------------------------------------------------------
+Delay:               9.016ns (Levels of Logic = 20)
+  Source:            counter_1 (FF)
+  Destination:       SEVENSEGMENT_5 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: counter_1 to SEVENSEGMENT_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.495   0.488  counter_1 (counter_1)
+     LUT1:I0->O            1   0.561   0.000  Madd__add0000_Madd_cy<1>_rt (Madd__add0000_Madd_cy<1>_rt)
+     MUXCY:S->O            1   0.523   0.000  Madd__add0000_Madd_cy<1> (Madd__add0000_Madd_cy<1>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<2> (Madd__add0000_Madd_cy<2>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<3> (Madd__add0000_Madd_cy<3>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<4> (Madd__add0000_Madd_cy<4>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<5> (Madd__add0000_Madd_cy<5>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<6> (Madd__add0000_Madd_cy<6>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<7> (Madd__add0000_Madd_cy<7>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<8> (Madd__add0000_Madd_cy<8>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<9> (Madd__add0000_Madd_cy<9>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<10> (Madd__add0000_Madd_cy<10>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<11> (Madd__add0000_Madd_cy<11>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<12> (Madd__add0000_Madd_cy<12>)
+     MUXCY:CI->O           1   0.065   0.000  Madd__add0000_Madd_cy<13> (Madd__add0000_Madd_cy<13>)
+     MUXCY:CI->O           0   0.065   0.000  Madd__add0000_Madd_cy<14> (Madd__add0000_Madd_cy<14>)
+     XORCY:CI->O          22   0.654   1.055  Madd__add0000_Madd_xor<15> (_add0000<15>)
+     LUT2:I1->O            3   0.562   0.453  SEVENSEGMENT_mux0000<2>3121 (N16)
+     LUT4:I3->O            1   0.561   0.380  SEVENSEGMENT_mux0000<2>217 (SEVENSEGMENT_mux0000<2>217)
+     LUT4:I2->O            4   0.561   0.501  SEVENSEGMENT_mux0000<2>267 (N4)
+     LUT4:I3->O            2   0.561   0.380  SEVENSEGMENT_mux0000<2>3181 (N7)
+     FDSE:S                    0.435          SEVENSEGMENT_5
+    ----------------------------------------
+    Total                      9.016ns (5.758ns logic, 3.258ns route)
+                                       (63.9% logic, 36.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.100ns (Levels of Logic = 2)
+  Source:            GET (PAD)
+  Destination:       State_FSM_FFd1 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: GET to State_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.824   0.517  GET_IBUF (GET_IBUF)
+     LUT4:I1->O            1   0.562   0.000  State_FSM_FFd1-In1 (State_FSM_FFd1-In1)
+     FDS:D                     0.197          State_FSM_FFd1
+    ----------------------------------------
+    Total                      2.100ns (1.583ns logic, 0.517ns route)
+                                       (75.4% logic, 24.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              5.271ns (Levels of Logic = 1)
+  Source:            SEVENSEGMENT_0 (FF)
+  Destination:       SEVENSEGMENT<0> (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: SEVENSEGMENT_0 to SEVENSEGMENT<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              2   0.495   0.380  SEVENSEGMENT_0 (SEVENSEGMENT_0)
+     OBUF:I->O                 4.396          SEVENSEGMENT_0_OBUF (SEVENSEGMENT<0>)
+    ----------------------------------------
+    Total                      5.271ns (4.891ns logic, 0.380ns route)
+                                       (92.8% logic, 7.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 8.72 secs
+ 
+--> 
+
+Total memory usage is 4567876 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

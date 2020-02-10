@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Utkan/LabProject/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Utkan/LabProject/xst"
+elaborate
+-ifn FourDigits.prj
+-ifmt mixed

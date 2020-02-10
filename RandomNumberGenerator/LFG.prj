@@ -1,0 +1,3 @@
+vhdl work "LCG.vhd"
+vhdl work "SeedGen.vhd"
+vhdl work "LFG.vhd"

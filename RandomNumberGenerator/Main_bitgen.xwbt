@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Utkan\LabProject\Main.ncd
+OUTFILE=C:\Users\Utkan\LabProject\Main.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50a-5vq100
+WORKINGDIR=C:\Users\Utkan\LabProject
+LICENSE=WebPack
+USER_INFO=211683579_0_0_512

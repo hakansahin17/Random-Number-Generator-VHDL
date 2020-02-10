@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/Utkan/LabProject/FourDigitsTest_isim_beh.exe" -prj "C:/Users/Utkan/LabProject/FourDigitsTest_beh.prj" "work.FourDigitsTest" 

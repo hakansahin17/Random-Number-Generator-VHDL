@@ -1,0 +1,19 @@
+NET "CLK" LOC = "P40";
+NET "GET" LOC = "P34";
+
+NET "ANODES<7>"  LOC = "P50";
+NET "ANODES<6>"  LOC = "P49";
+NET "ANODES<5>"  LOC = "P52";
+NET "ANODES<4>"  LOC = "P56";
+NET "ANODES<3>"  LOC = "P59";
+NET "ANODES<2>"  LOC = "P57";
+NET "ANODES<1>"  LOC = "P60";
+NET "ANODES<0>"  LOC = "P61";
+
+NET "SevenSEGMENT<0>"  LOC = "P62";
+NET "SevenSEGMENT<1>"  LOC = "P65";
+NET "SevenSEGMENT<2>"  LOC = "P72";
+NET "SevenSEGMENT<3>"  LOC = "P73";
+NET "SevenSEGMENT<4>"  LOC = "P98";
+NET "SevenSEGMENT<5>"  LOC = "P71";
+NET "SevenSEGMENT<6>"  LOC = "P64";

@@ -1,0 +1,11 @@
+[Inputs]
+RUN
+CLK
+=BIN[0:12]=
+[Outputs]
+DONE
+=D1[0:3]=
+=D2[0:3]=
+=D3[0:3]=
+=D4[0:3]=
+[BiDir]
